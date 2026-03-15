@@ -550,6 +550,30 @@ img { display: block; max-width: 100%; object-fit: cover; }
 .chef-card h4 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
 .chef-card > p { font-size: 13px; color: var(--muted); }
 
+/* ===== FLOATING CART ===== */
+.floating-cart {
+  display: none;
+  position: fixed; bottom: 24px; right: 24px; z-index: 300;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: var(--gold); color: #0d0d0d;
+  border: none; cursor: pointer;
+  align-items: center; justify-content: center;
+  box-shadow: 0 6px 24px rgba(232,184,75,.45);
+  transition: transform .2s, box-shadow .2s;
+}
+.floating-cart:hover { transform: scale(1.08); box-shadow: 0 10px 32px rgba(232,184,75,.6); }
+.floating-cart-badge {
+  position: absolute; top: -4px; right: -4px;
+  background: #e53935; color: #fff;
+  font-size: 11px; font-weight: 700;
+  width: 20px; height: 20px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .floating-cart { display: flex; }
+}
+
 /* ===== FOOTER ===== */
 .footer { background: #080808; }
 .footer-top {
@@ -630,14 +654,22 @@ img { display: block; max-width: 100%; object-fit: cover; }
   .carousel-caption h2 { font-size: 22px; margin-bottom: 12px; }
   .carousel-overlay { padding-bottom: 50px; }
 
-  /* Menu: 2 колонки */
-  .menu-grid { grid-template-columns: repeat(2, 1fr); }
-  .menu-card-img { height: 150px; }
+  /* Menu: горизонтальные карточки (1 колонка) */
+  .menu-grid { grid-template-columns: 1fr; gap: 12px; }
   .menu-section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .menu-card-body p { display: none; }
-  .menu-card-footer { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+  .menu-card { flex-direction: row; align-items: stretch; min-height: 120px; }
+  .menu-card-img {
+    width: 110px; min-width: 110px; height: auto;
+    border-radius: 0; order: 2;
+  }
+  .menu-card-body { padding: 14px 14px 12px; order: 1; justify-content: space-between; }
+  .menu-cat { margin-bottom: 4px; font-size: 10px; }
+  .menu-card-body h3 { font-size: 14px; margin-bottom: 4px; }
+  .menu-card-body p { font-size: 12px; margin-bottom: 10px; -webkit-line-clamp: 2; line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; flex: unset; }
+  .menu-card-footer { flex-direction: row; align-items: center; gap: 10px; flex-wrap: wrap; }
   .menu-price { font-size: 16px; }
-  .btn-add-cart { width: 100%; justify-content: center; }
+  .btn-add-cart { padding: 7px 14px; font-size: 11px; }
 
   /* Reservation */
   .form-row { grid-template-columns: 1fr; }

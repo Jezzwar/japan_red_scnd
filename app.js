@@ -17,6 +17,8 @@ function addToCart(btn) {
   const badge = document.getElementById('cartBadge');
   badge.textContent = cartCount;
   badge.style.display = 'flex';
+  const floatingBadge = document.getElementById('floatingBadge');
+  if (floatingBadge) floatingBadge.textContent = cartCount;
   const original = btn.innerHTML;
   btn.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Added`;
   btn.style.background = '#4caf50';
