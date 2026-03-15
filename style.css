@@ -812,7 +812,8 @@ section#menu::before {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
-  nav { padding: 12px 20px; }
+  nav { padding: 12px 20px; background: transparent; border-color: transparent; box-shadow: none; }
+  nav.scrolled { background: var(--cream); border-color: var(--border); box-shadow: 0 2px 28px rgba(61,28,16,.08); }
   .nav-pill { display: none; }
   .hamburger { display: flex; }
   .nav-logo-jp { display: none; }
@@ -825,25 +826,19 @@ section#menu::before {
     min-height: 100vh;
     align-items: stretch;
   }
-  .hero-btns-desktop { display: none !important; }
-  .hero-btns-mobile {
-    display: flex !important;
-    grid-column: 1 / -1;
-    grid-row: 2;
-    justify-content: center;
-    padding-top: 16px;
-    opacity: 1; animation: none;
-  }
-  .hero-btns-mobile .btn-red { width: 100%; justify-content: center; font-size: 13px; padding: 14px 20px; }
+  .hero-btns-desktop { display: flex !important; opacity: 1; animation: none; }
+  .hero-btns-desktop .btn-red { font-size: 12px; padding: 11px 18px; gap: 7px; }
+  .hero-btns-mobile { display: none !important; }
 
   .hero-content {
     grid-column: 1; grid-row: 1;
     padding: 16px 8px 8px 0;
     display: flex; flex-direction: column; justify-content: center;
+    align-self: stretch;
   }
   .hero-chip { font-size: 9px; padding: 5px 10px; margin-bottom: 10px; }
   .hero-title { font-size: clamp(18px, 6.5vw, 30px); margin-bottom: 10px; letter-spacing: -.5px; }
-  .hero-sub { font-size: 11px; line-height: 1.55; margin-bottom: 0; max-width: 100%; }
+  .hero-sub { font-size: 11px; line-height: 1.55; margin-bottom: 16px; max-width: 100%; }
 
   .hero-visual {
     grid-column: 2; grid-row: 1;
