@@ -819,11 +819,11 @@ section#menu::before {
 
   #hero {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: 1fr auto;
     text-align: left;
     padding: 80px 16px 24px;
-    min-height: auto;
-    align-items: start;
+    min-height: 100vh;
+    align-items: center;
   }
   .hero-btns-desktop { display: none !important; }
   .hero-btns-mobile {
