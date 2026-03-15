@@ -207,12 +207,39 @@ document.getElementById('mAddBtn').addEventListener('click', () => {
   closeModal();
 });
 
+const addonSheet = document.getElementById('addonSheet');
+const addonSheetOverlay = document.getElementById('addonSheetOverlay');
+const addonSheetGrid = document.getElementById('addonSheetGrid');
+const addonSheetTitle = document.getElementById('addonSheetTitle');
+
+function openAddonSheet(tabKey, label) {
+  const srcGrid = document.getElementById('grid' + tabKey.charAt(0).toUpperCase() + tabKey.slice(1));
+  addonSheetGrid.innerHTML = srcGrid.innerHTML;
+  addonSheetTitle.textContent = label;
+  addonSheet.style.display = 'block';
+  requestAnimationFrame(() => {
+    addonSheet.classList.add('open');
+    addonSheetOverlay.classList.add('open');
+  });
+}
+function closeAddonSheet() {
+  addonSheet.classList.remove('open');
+  addonSheetOverlay.classList.remove('open');
+  setTimeout(() => { addonSheet.style.display = 'none'; }, 350);
+}
+document.getElementById('addonSheetClose').addEventListener('click', closeAddonSheet);
+addonSheetOverlay.addEventListener('click', closeAddonSheet);
+
+const tabLabels = { dodatki: 'Dodatki', napoje: 'Napoje', mochi: 'Mochi' };
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    if (window.innerWidth <= 900) {
+      openAddonSheet(btn.dataset.tab, tabLabels[btn.dataset.tab]);
+    }
   });
 });
 
