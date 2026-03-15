@@ -648,11 +648,19 @@ img { display: block; max-width: 100%; object-fit: cover; }
     border-bottom: 1px solid var(--border);
   }
 
-  /* Carousel: full width, кнопка не перекрывает точки */
+  /* Carousel: full width */
   .carousel-section { margin: 0; padding: 0; }
-  .carousel { height: 260px; border-radius: 0; }
-  .carousel-caption h2 { font-size: 22px; margin-bottom: 12px; }
-  .carousel-overlay { padding-bottom: 50px; }
+  .carousel { height: 300px; border-radius: 0; }
+  .carousel-overlay {
+    background: linear-gradient(to right, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.6) 65%, rgba(5,5,5,0.15) 100%);
+    padding: 0 5vw 50px;
+    align-items: flex-end;
+  }
+  .carousel-caption { max-width: 100%; width: 65%; }
+  .carousel-caption h2 { font-size: 20px; margin-bottom: 10px; line-height: 1.2; }
+
+  /* Отступ между каруселью и меню */
+  .menu-section { padding-top: 16px; }
 
   /* Menu: горизонтальные карточки (1 колонка) */
   .menu-grid { grid-template-columns: 1fr; gap: 12px; }
