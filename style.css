@@ -848,8 +848,8 @@ section#menu::before {
   .dish-name { font-size: 14px; margin-bottom: 5px; }
   .dish-desc { font-size: 12px; -webkit-line-clamp: 2; line-clamp: 2; margin-bottom: 8px; }
   .dish-foot { padding: 6px 0 0; }
-  .dish-price-tag { font-size: 22px; }
-  .add-to-cart-btn { padding: 10px 14px; font-size: 12px; }
+  .dish-price-tag { font-size: 17px; }
+  .add-to-cart-btn { padding: 8px 12px; font-size: 11px; }
 
   #o-nas .section-inner { flex-direction: column; padding: 64px 24px; gap: 40px; }
   .about-deli { width: 100%; }
