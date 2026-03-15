@@ -857,7 +857,7 @@ section#menu::before {
   .hero-ring-2 { width: 35vw; height: 35vw; margin-left: -17.5vw; margin-top: -17.5vw; }
   .hero-float-chip { display: none; }
 
-  .section-wrap { padding: 64px 16px; }
+  .section-wrap { padding: 32px 16px; }
   section#menu { padding-top: 32px; }
   .sec-header { flex-direction: column; align-items: flex-start; gap: 20px; }
 
@@ -880,7 +880,7 @@ section#menu::before {
   .dish-price-tag { font-size: 17px; }
   .add-to-cart-btn { padding: 8px 12px; font-size: 11px; }
 
-  #o-nas .section-inner { flex-direction: column; padding: 64px 24px; gap: 40px; }
+  #o-nas .section-inner { flex-direction: column; padding: 32px 24px 64px; gap: 40px; }
   .about-deli { width: 100%; }
   .about-img { width: 260px; height: 260px; }
   .about-ring { width: 300px; height: 300px; }
