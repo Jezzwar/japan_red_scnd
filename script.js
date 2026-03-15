@@ -326,9 +326,12 @@ function closeMobileMenu() {
 }
 
 // ─── NAV SCROLL ──────────────────────────────────────────────────
-window.addEventListener('scroll', () => {
-  document.getElementById('nav').classList.toggle('scrolled', scrollY > 40);
-});
+function updateNav() {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+}
+window.addEventListener('scroll', updateNav);
+window.addEventListener('load', updateNav);
+document.addEventListener('DOMContentLoaded', updateNav);
 
 // ─── SCROLL REVEAL ───────────────────────────────────────────────
 const revealObs = new IntersectionObserver(entries => {

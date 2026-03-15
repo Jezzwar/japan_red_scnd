@@ -822,12 +822,12 @@ section#menu::before {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto;
     text-align: left;
-    padding: 80px 16px 24px;
+    padding: 64px 16px 20px;
     min-height: 100vh;
     align-items: stretch;
   }
   .hero-btns-desktop { display: flex !important; opacity: 1; animation: none; }
-  .hero-btns-desktop .btn-red { font-size: 12px; padding: 11px 18px; gap: 7px; }
+  .hero-btns-desktop .btn-red { font-size: 11px; padding: 9px 14px; gap: 6px; }
   .hero-btns-mobile { display: none !important; }
 
   .hero-content {
