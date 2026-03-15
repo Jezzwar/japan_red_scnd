@@ -664,7 +664,7 @@ img { display: block; max-width: 100%; object-fit: cover; }
 
   /* Menu: горизонтальные карточки (1 колонка) */
   .menu-grid { grid-template-columns: 1fr; gap: 12px; }
-  .menu-section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .menu-section-header { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 22px; }
 
   .menu-card { flex-direction: row; align-items: stretch; min-height: 120px; }
   .menu-card-img {
