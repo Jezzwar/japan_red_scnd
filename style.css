@@ -889,11 +889,8 @@ section#menu::before {
   .delivery-cards { grid-template-columns: 1fr; }
   #kontakt .section-inner { grid-template-columns: 1fr; padding: 64px 24px; gap: 48px; }
 
-  .foot-inner { flex-direction: column; gap: 24px; padding: 28px 24px 20px; align-items: center; text-align: center; }
-  .foot-contact-grid { grid-template-columns: 1fr; width: 100%; }
-  .ci-foot { justify-content: center; }
-  .foot-col { width: 100%; }
-  .foot-desc { max-width: 100%; }
+  .foot-inner { flex-direction: column; gap: 24px; padding: 28px 24px 20px; }
+  .foot-contact-grid { grid-template-columns: 1fr; }
   .foot-bottom { padding: 12px 24px; text-align: center; }
   .combined-row { flex-direction: column; padding: 48px 24px; }
   .combined-col { padding: 0; }
