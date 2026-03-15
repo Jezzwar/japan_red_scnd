@@ -903,6 +903,14 @@ section#menu::before {
   .modal-right { padding: 22px 20px 24px; }
   .addon-grid { grid-template-columns: repeat(2,1fr); }
 
+  /* Reservation modal mobile */
+  .res-modal { width: 92vw; padding: 24px 20px 20px; }
+  .res-modal-title { font-size: 22px; }
+  .c-form-row { grid-template-columns: 1fr; gap: 10px; }
+  .c-form { gap: 10px; }
+  .c-form input, .c-form textarea { font-size: 14px; padding: 13px 14px; }
+  .guest-picker { padding: 11px 14px; }
+
   .cart-sidebar { width: 100%; right: -100%; }
   .jp-kanji, .about-jp-stamp, .sec-kanji { display: none; }
   section#menu::before { display: none; }
