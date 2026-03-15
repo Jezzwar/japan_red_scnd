@@ -230,6 +230,15 @@ function closeAddonSheet() {
 document.getElementById('addonSheetClose').addEventListener('click', closeAddonSheet);
 addonSheetOverlay.addEventListener('click', closeAddonSheet);
 
+document.getElementById('addonSheetConfirm').addEventListener('click', () => {
+  if (!activeDish) return;
+  const addons = [...addonSheetGrid.querySelectorAll('input[type="checkbox"]:checked')]
+    .map(cb => ({ name: cb.value, price: parseFloat(cb.dataset.price) }));
+  addToCart(activeDish, addons);
+  closeAddonSheet();
+  closeModal();
+});
+
 const tabLabels = { dodatki: 'Dodatki', napoje: 'Napoje', mochi: 'Mochi' };
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
