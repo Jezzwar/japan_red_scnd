@@ -819,34 +819,28 @@ section#menu::before {
 
   #hero {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto auto;
     text-align: left;
     padding: 80px 16px 24px;
-    min-height: 100vh;
-    align-items: stretch;
+    min-height: auto;
+    align-items: start;
   }
   .hero-btns-desktop { display: none !important; }
   .hero-btns-mobile {
     display: flex !important;
     grid-column: 1 / -1;
-    grid-row: 2;
     justify-content: center;
-    padding-top: 16px;
+    padding-top: 8px;
     opacity: 1; animation: none;
   }
   .hero-btns-mobile .btn-red { width: 100%; justify-content: center; font-size: 13px; padding: 14px 20px; }
 
-  .hero-content {
-    grid-column: 1; grid-row: 1;
-    padding: 16px 8px 8px 0;
-    display: flex; flex-direction: column; justify-content: center;
-  }
+  .hero-content { padding: 16px 8px 8px 0; align-self: start; }
   .hero-chip { font-size: 9px; padding: 5px 10px; margin-bottom: 10px; }
   .hero-title { font-size: clamp(18px, 6.5vw, 30px); margin-bottom: 10px; letter-spacing: -.5px; }
   .hero-sub { font-size: 11px; line-height: 1.55; margin-bottom: 0; max-width: 100%; }
 
   .hero-visual {
-    grid-column: 2; grid-row: 1;
     justify-content: center; align-items: center;
     min-height: 0; overflow: visible;
     padding: 16px 0 8px;
