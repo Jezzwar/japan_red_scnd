@@ -589,55 +589,69 @@ img { display: block; max-width: 100%; object-fit: cover; }
 
 @media (max-width: 1200px) {
   .menu-grid { grid-template-columns: repeat(3, 1fr); }
-  .chefs-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-top { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 1024px) {
   .menu-grid { grid-template-columns: repeat(2, 1fr); }
-  .services-inner { grid-template-columns: 1fr; gap: 40px; }
-  .services-img { height: 380px; }
   .reservation-inner { grid-template-columns: 1fr; gap: 40px; }
 }
 
 @media (max-width: 900px) {
   :root { --pad: 5vw; }
-  .navbar { height: 64px; gap: 12px; padding: 0 5vw; }
-  .carousel-section { margin: 0 5vw; }
+
+  /* Navbar: full width, no centering offset */
+  .navbar {
+    left: 0; right: 0; transform: none;
+    max-width: 100%; width: 100%;
+    height: 64px; gap: 10px; padding: 0 5vw;
+  }
   .nav-spacer { height: 64px; }
-  .carousel { height: 240px; }
-  .address-wrap { max-width: none; }
+
+  /* Hide address bar and links on mobile */
+  .address-wrap { display: none; }
   .nav-links, .nav-right { display: none; }
   .burger { display: flex; }
+
+  /* Mobile dropdown menu: full width */
   .nav-links.open {
     display: flex; flex-direction: column;
-    position: fixed; top: 64px; left: 5vw; right: 5vw;
-    background: rgba(13,13,13,.98);
+    position: fixed; top: 64px; left: 0; right: 0;
+    background: rgba(8,8,8,.98);
     backdrop-filter: blur(14px);
-    padding: 24px; gap: 16px; z-index: 199;
+    padding: 24px 5vw; gap: 16px; z-index: 199;
     border-bottom: 1px solid var(--border);
   }
-  .hero-content { padding: 110px 24px 70px; max-width: 100%; }
-  .hero-content h1 { font-size: 40px; }
+
+  /* Carousel: full width */
+  .carousel-section { margin: 0; padding: 12px 0 0; }
+  .carousel { height: 220px; border-radius: 0; }
+
+  /* Menu */
   .menu-grid { grid-template-columns: repeat(2, 1fr); }
-  .menu-card-img { height: 165px; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .chefs-grid { grid-template-columns: repeat(2, 1fr); }
-  .services-grid { grid-template-columns: 1fr; }
+  .menu-card-img { height: 150px; }
+  .menu-section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+
+  /* Reservation */
   .form-row { grid-template-columns: 1fr; }
-  .footer-top { grid-template-columns: 1fr; padding: 40px 24px; gap: 28px; }
-  .footer-bottom { padding: 18px 24px; }
+
+  /* Footer */
+  .footer-top { grid-template-columns: 1fr; padding: 40px 5vw; gap: 28px; }
+  .footer-bottom { padding: 18px 5vw; }
 }
 
 @media (max-width: 600px) {
+  :root { --pad: 4vw; }
+
   .menu-grid { grid-template-columns: 1fr; }
-  .hero-content h1 { font-size: 32px; }
-  .services-content h2,
+  .carousel { height: 180px; }
+
   .reservation-left h2,
-  .section-header-c h2,
-  .menu-section-header h2 { font-size: 28px; }
-  .chefs-grid { grid-template-columns: repeat(2, 1fr); }
-  .menu-section-header { flex-direction: column; align-items: flex-start; }
-  .leaf-1 { width: 90px; }
-  .leaf-2 { width: 70px; }
+  .menu-section-header h2 { font-size: 26px; }
+
+  .carousel-caption h2 { font-size: 22px; }
+  .btn-primary { font-size: 13px; padding: 10px 20px; }
+
+  .filter-tabs { gap: 6px; }
+  .tab { font-size: 12px; padding: 6px 14px; }
 }
