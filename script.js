@@ -326,12 +326,13 @@ function closeMobileMenu() {
 }
 
 // ─── NAV SCROLL ──────────────────────────────────────────────────
-function updateNav() {
-  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
-}
-window.addEventListener('scroll', updateNav);
-window.addEventListener('load', updateNav);
-document.addEventListener('DOMContentLoaded', updateNav);
+const navEl = document.getElementById('nav');
+const navSentinel = document.createElement('div');
+navSentinel.style.cssText = 'position:absolute;top:80px;left:0;height:1px;width:1px;pointer-events:none;';
+document.body.prepend(navSentinel);
+new IntersectionObserver(([e]) => {
+  navEl.classList.toggle('scrolled', !e.isIntersecting);
+}).observe(navSentinel);
 
 // ─── SCROLL REVEAL ───────────────────────────────────────────────
 const revealObs = new IntersectionObserver(entries => {
